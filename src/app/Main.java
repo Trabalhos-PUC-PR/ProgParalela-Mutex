@@ -25,12 +25,14 @@ public class Main {
 		even1.start();
 		even2.start();
 
-		System.out.printf("Entering while at count: %s\n",count);
-		while(count.getCount()<100) {
-//			System.out.println(count);
+		try {
+			odds1.join();
+			odds2.join();
+			even1.join();
+			even2.join();
+		} catch (Exception e) {
 		}
-		System.out.println("Exiting while");
-		
+
 		for (int i : chave) {
 			System.out.println(i);
 		}
